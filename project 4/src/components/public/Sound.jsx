@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const artists = [
   'LATIN EDM', 'BASS', 'REGGAETÓN', 'GUARACHA', 'TRIBAL',
-  'PERREO', 'LATIN TRAP', 'DEMBOW',
+  'PERREO', 'LATIN TRAP', 'DEMBOW', 'EDM', 'TECHNO', 'HOUSE',
 ];
 
 const sizes = ['text-sm', 'text-base', 'text-lg', 'text-xl', 'text-2xl', 'text-3xl'];
