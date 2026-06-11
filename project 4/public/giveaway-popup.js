@@ -33,6 +33,7 @@
   var SCROLL_PCT = 0.25;
   var RESHOW_HOURS = 24;
   var STORAGE_KEY = 'pe_gw_ts';
+  var DONE_KEY = 'pe_gw_done';
 
   var CSS = "" +
     "#pe-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:99998;backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);}" +
@@ -158,6 +159,7 @@
     }
     function isDismissed() {
       try {
+        if (localStorage.getItem(DONE_KEY)) return true; // already entered: never reshow
         var ts = localStorage.getItem(STORAGE_KEY);
         if (!ts) return false;
         return (Date.now() - parseInt(ts, 10)) < (RESHOW_HOURS * 3600000);
@@ -177,6 +179,21 @@
       window.addEventListener('scroll', onScroll, { passive: true });
     }, 1500);
 
+    // Re-arm on SPA navigation (home <-> city landing pages)
+    function onRouteChange() {
+      hasShown = false;
+      window.removeEventListener('scroll', onScroll);
+      setTimeout(function () {
+        window.addEventListener('scroll', onScroll, { passive: true });
+      }, 1500);
+    }
+    var _push = history.pushState;
+    history.pushState = function () {
+      _push.apply(this, arguments);
+      onRouteChange();
+    };
+    window.addEventListener('popstate', onRouteChange);
+
     document.getElementById('pe-close').addEventListener('click', dismissPopup);
     document.getElementById('pe-no-thanks').addEventListener('click', dismissPopup);
     overlay.addEventListener('click', function (e) {
@@ -193,10 +210,36 @@
       el.addEventListener('input', function () { this.style.borderColor = ''; }, { once: true });
     }
 
+    function findTicketUrl() {
+      var links = document.querySelectorAll('a[href]');
+      for (var i = 0; i < links.length; i++) {
+        var a = links[i];
+        var href = a.getAttribute('href') || '';
+        var text = (a.textContent || '').toLowerCase();
+        if (href.indexOf('http') === 0 && href.indexOf('perreo-electrico') === -1) {
+          if (/eventbrite|theticketing|ticket|linktr/.test(href.toLowerCase()) || text.indexOf('ticket') !== -1) {
+            return href;
+          }
+        }
+      }
+      return null;
+    }
+
     function showSuccess() {
+      try { localStorage.setItem(DONE_KEY, '1'); } catch (e) {}
       document.getElementById('pe-form-content').style.display = 'none';
       document.getElementById('pe-success').style.display = 'block';
-      setTimeout(dismissPopup, 9000);
+
+      // On a city landing page: send them straight to tickets
+      var onCityPage = detectCity() !== 'city_unknown' || window.location.pathname.indexOf('/event') === 0;
+      var ticketUrl = onCityPage ? findTicketUrl() : null;
+      if (ticketUrl) {
+        var cta = document.querySelector('.pe-success-cta');
+        if (cta) { cta.href = ticketUrl; cta.textContent = 'GET YOUR TICKETS \u2192'; }
+        setTimeout(function () { window.location.href = ticketUrl; }, 1600);
+      } else {
+        setTimeout(dismissPopup, 9000);
+      }
     }
 
     document.getElementById('pe-form').addEventListener('submit', function (e) {
