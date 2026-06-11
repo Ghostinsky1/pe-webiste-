@@ -46,6 +46,7 @@ headers: {
 Authorization: `Bearer ${env.CLICKFUNNELS_API_TOKEN}`,
 "Content-Type": "application/json",
 Accept: "application/json",
+  "User-Agent": "PerreoElectricoSite/1.0",
 },
 body: JSON.stringify({ contact: { email_address: email, tag_ids: [CF_TAG_ID] } }),
 });
