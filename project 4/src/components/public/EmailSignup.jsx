@@ -14,13 +14,11 @@ export default function EmailSignup() {
     setError('');
 
     try {
-      const apiUrl = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/email-signup`;
-      const response = await fetch(apiUrl, {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
-          'Content-Type': 'application/json',
-        },
+      const response = await fetch('/api/signup', {
+                method: 'POST',
+                headers: {
+                            'Content-Type': 'application/json',
+                },
         body: JSON.stringify({ email, source: 'website' }),
       });
 
