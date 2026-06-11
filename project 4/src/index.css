@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@700;900&family=Saira:wght@300;400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --red: #CC0000;
+  --red-bright: #FF1A1A;
+  --red-deep: #8B0000;
+  --black: #000000;
+  --dark: #060000;
+  --mid: #0d0000;
+  --chrome: #C0C0C0;
+  --chrome-dim: #888888;
+  --white: #F5EFEF;
+  --text: #D0C8C8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--dark);
+  color: var(--text);
+  font-family: 'Saira', sans-serif;
+  font-weight: 300;
+  cursor: crosshair;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6,
+.font-display {
+  font-family: 'Saira Condensed', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.font-body {
+  font-family: 'Saira', sans-serif;
+}
+
+.btn-angled {
+  clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+}
+
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(180,0,0,0.4) 25%, rgba(220,220,220,0.5) 45%, rgba(255,255,255,0.65) 50%, rgba(220,220,220,0.5) 55%, rgba(180,0,0,0.4) 75%, transparent 100%);
+  border: none;
+}
+
+.red-glow {
+  text-shadow: 0 0 20px rgba(204,0,0,0.8), 0 0 40px rgba(204,0,0,0.4);
+}
+
+.chrome-glow {
+  text-shadow: 0 0 20px rgba(192,192,192,0.6), 0 0 40px rgba(192,192,192,0.3);
+}
+
+@keyframes ember-pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@keyframes shimmer-line {
+  0% { transform: translateY(-100vh) rotate(-25deg); }
+  100% { transform: translateY(100vh) rotate(-25deg); }
+}
+
+@keyframes ticker-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes spotlight-sweep {
+  0% { transform: rotate(-30deg) translateX(0); opacity: 0.6; }
+  50% { transform: rotate(30deg) translateX(0); opacity: 0.3; }
+  100% { transform: rotate(-30deg) translateX(0); opacity: 0.6; }
+}
+
+@keyframes ticker-band {
+  0% { background-position: -100% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes dot-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
+@keyframes beam-sweep {
+  0% { transform: rotate(-20deg); opacity: 0.4; }
+  50% { transform: rotate(20deg); opacity: 0.15; }
+  100% { transform: rotate(-20deg); opacity: 0.4; }
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 4px;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: #0a0000;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: var(--red-deep);
+}
+
+input, textarea, select {
+  cursor: text;
+}
+
+button, a {
+  cursor: pointer;
+}
+
+/* Event pages */
+.marquee-bar {
+  background: #000000;
+  border-bottom: 1px solid rgba(204,0,0,0.2);
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 10px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.marquee-track {
+  display: inline-flex;
+  animation: marquee-scroll 120s linear infinite;
+}
+
+.marquee-track span {
+  font-family: 'Saira Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--red);
+  white-space: nowrap;
+}
+
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.event-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .event-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 32px;
+}
+
+@media (max-width: 680px) {
+  .events-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ticket-btn-pulse:hover {
+  animation: ticket-glow 1.5s ease-in-out infinite;
+}
+
+@keyframes ticket-glow {
+  0%, 100% { box-shadow: 0 0 30px rgba(204,255,0,0.3); }
+  50% { box-shadow: 0 0 50px rgba(204,255,0,0.5), 0 0 80px rgba(204,255,0,0.2); }
+}
