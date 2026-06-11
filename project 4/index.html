@@ -109,9 +109,10 @@
     </noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script src="/giveaway-popup.js" defer></script>
     <script>
       (function() {
-        var params = new URLSearchParams(window.location.search);
+        var params = new URLSearchParams(window.location.search);        
         var fbclid = params.get('fbclid');
         if (!fbclid) return;
         function tagLinks() {
