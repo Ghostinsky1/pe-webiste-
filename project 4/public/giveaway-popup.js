@@ -12,6 +12,8 @@
   window.__PE_POPUP_LOADED = true;
 
   var API_URL = '/api/giveaway';
+  var SB_URL = 'https://uhafzxfcadjdnjwldpvy.supabase.co';
+  var SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVoYWZ6eGZjYWRqZG5qd2xkcHZ5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMzNzc4NTYsImV4cCI6MjA4ODk1Mzg1Nn0.ys3BSIKdciwFbDeBVFw-_5yY1uUVkWR7BM6A0v68n3U';
 
   var CITY_MAP = {
     'denver': 'city_denver',
@@ -225,21 +227,41 @@
       return null;
     }
 
+    // Resolve the show's real ticket_url from the database via the page slug,
+    // falling back to scanning the page for a ticket link.
+    function getTicketUrl(cb) {
+      var m = window.location.pathname.match(/^\/events\/([^\/]+)/);
+      var domUrl = findTicketUrl();
+      if (!m) { cb(domUrl); return; }
+      fetch(SB_URL + '/rest/v1/shows?slug=eq.' + encodeURIComponent(m[1]) + '&select=ticket_url', {
+        headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY }
+      })
+      .then(function (r) { return r.json(); })
+      .then(function (rows) {
+        var u = rows && rows[0] && rows[0].ticket_url;
+        cb(u && u.indexOf('http') === 0 ? u : domUrl);
+      })
+      .catch(function () { cb(domUrl); });
+    }
+
     function showSuccess() {
       try { localStorage.setItem(DONE_KEY, '1'); } catch (e) {}
       document.getElementById('pe-form-content').style.display = 'none';
       document.getElementById('pe-success').style.display = 'block';
 
-      // On a city landing page: send them straight to tickets
+      // On a city landing page: send them straight to the tickets they were looking at
       var onCityPage = detectCity() !== 'city_unknown' || window.location.pathname.indexOf('/event') === 0;
-      var ticketUrl = onCityPage ? findTicketUrl() : null;
-      if (ticketUrl) {
-        var cta = document.querySelector('.pe-success-cta');
-        if (cta) { cta.href = ticketUrl; cta.textContent = 'GET YOUR TICKETS \u2192'; }
-        setTimeout(function () { window.location.href = ticketUrl; }, 1600);
-      } else {
-        setTimeout(dismissPopup, 9000);
-      }
+      if (!onCityPage) { setTimeout(dismissPopup, 9000); return; }
+
+      getTicketUrl(function (ticketUrl) {
+        if (ticketUrl) {
+          var cta = document.querySelector('.pe-success-cta');
+          if (cta) { cta.href = ticketUrl; cta.textContent = 'GET YOUR TICKETS \u2192'; }
+          setTimeout(function () { window.location.href = ticketUrl; }, 1400);
+        } else {
+          setTimeout(dismissPopup, 9000);
+        }
+      });
     }
 
     document.getElementById('pe-form').addEventListener('submit', function (e) {
