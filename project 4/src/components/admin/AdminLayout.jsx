@@ -25,7 +25,7 @@ export default function AdminLayout({ children }) {
       <div style={{ padding: '20px 16px 18px', borderBottom: '1px solid rgba(192,192,192,0.08)', textAlign: 'center' }}>
         <img
           src="/Oxido.png"
-          alt="PERREO ELECTRICO"
+          alt="DESENFOCADO"
           style={{
             height: '34px',
             width: 'auto',
@@ -164,7 +164,7 @@ export default function AdminLayout({ children }) {
           <button onClick={() => setSidebarOpen(true)} style={{ background: 'none', border: 'none', color: 'var(--chrome-dim)', cursor: 'pointer' }}>
             <Menu size={20} />
           </button>
-          <img src="/Oxido.png" alt="PERREO ELECTRICO" style={{ height: '30px', width: 'auto', filter: 'drop-shadow(0 0 8px rgba(204,0,0,0.4))' }} />
+          <img src="/Oxido.png" alt="DESENFOCADO" style={{ height: '30px', width: 'auto', filter: 'drop-shadow(0 0 8px rgba(204,0,0,0.4))' }} />
         </header>
 
         <main style={{
