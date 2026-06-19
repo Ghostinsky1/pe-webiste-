@@ -1,5 +1,5 @@
 /* ════════════════════════════════════════════════════════════
-   PERREO ELÉCTRICO — GIVEAWAY POPUP v2 (site-integrated build)
+   DESENFOCADO — GIVEAWAY POPUP v2 (site-integrated build)
    - Fires at 25% scroll, 24h dismiss memory
    - Captures First Name, Email, Phone
    - Auto-detects city from URL at submit time (SPA-safe)
@@ -77,11 +77,11 @@
     "@media (max-width:480px){.pe-headline{font-size:38px;}.pe-headline-block,.pe-form-wrap,.pe-fine-print,.pe-prizes,.pe-logo-wrap{padding-left:22px;padding-right:22px;}}";
 
   var HTML = "" +
-    '<div id="pe-modal" role="dialog" aria-modal="true" aria-label="Perreo Electrico giveaway">' +
+    '<div id="pe-modal" role="dialog" aria-modal="true" aria-label="Desenfocado giveaway">' +
     '<button id="pe-close" aria-label="Close">&times;</button>' +
     '<div class="pe-top-bar"></div>' +
     '<div class="pe-badge">⚡ WEEKLY GIVEAWAY &nbsp;—&nbsp; ONE WINNER EVERY SUNDAY ⚡</div>' +
-    '<div class="pe-logo-wrap"><img src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/f1027de7-2038-4cb2-b32d-e3b0cf3875c1/workspace-310419/Oxido.png" alt="Perreo Electrico" /></div>' +
+    '<div class="pe-logo-wrap"><img src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/f1027de7-2038-4cb2-b32d-e3b0cf3875c1/workspace-310419/Oxido.png" alt="Desenfocado" /></div>' +
     '<div class="pe-line"></div>' +
     '<div class="pe-headline-block">' +
     '<div class="pe-eyebrow">ENTER TO WIN</div>' +
@@ -102,7 +102,7 @@
     '<button type="submit" class="pe-cta" id="pe-submit">ENTER NOW — IT’S FREE →</button>' +
     '</form>' +
     '</div>' +
-    '<div class="pe-fine-print">One winner every Sunday. No purchase necessary.<br/>By entering you agree to receive emails &amp; texts from Perreo Eléctrico.<br/><a href="#">Unsubscribe anytime.</a></div>' +
+    '<div class="pe-fine-print">One winner every Sunday. No purchase necessary.<br/>By entering you agree to receive emails &amp; texts from Desenfocado.<br/><a href="#">Unsubscribe anytime.</a></div>' +
     '<button class="pe-no-thanks" id="pe-no-thanks">No thanks — I don’t want free stuff</button>' +
     '</div>' +
     '<div class="pe-success" id="pe-success">' +
