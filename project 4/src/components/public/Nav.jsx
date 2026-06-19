@@ -38,7 +38,7 @@ export default function Nav() {
           <a href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', flexShrink: 0 }}>
             <img
               src="/Oxido.png"
-              alt="PERREO ELECTRICO"
+              alt="DESENFOCADO"
               style={{
                 height: '46px',
                 width: 'auto',
@@ -131,7 +131,7 @@ export default function Nav() {
           >
             <div style={{ padding: '20px 24px 28px', display: 'flex', flexDirection: 'column', gap: '18px' }}>
               <div style={{ display: 'flex', justifyContent: 'center', paddingBottom: '16px', borderBottom: '1px solid rgba(192,192,192,0.08)' }}>
-                <img src="/Oxido.png" alt="PERREO ELECTRICO" style={{ height: '40px', width: 'auto', filter: 'drop-shadow(0 0 12px rgba(204,0,0,0.5))' }} />
+                <img src="/Oxido.png" alt="DESENFOCADO" style={{ height: '40px', width: 'auto', filter: 'drop-shadow(0 0 12px rgba(204,0,0,0.5))' }} />
               </div>
               {navLinks.map((link) => (
                 <a

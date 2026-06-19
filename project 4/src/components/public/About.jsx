@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 
 export default function About({ settings }) {
-  const body = settings?.about_body || 'PERREO ELECTRICO is the fusion of raw reggaetón energy and underground electronic music culture. We tour without barriers — no velvet ropes, no bottle service, just a room full of people who came to move. Born in St. Louis, grown nationwide, we bring the rave to your city.';
+  const body = settings?.about_body || 'DESENFOCADO is the fusion of raw reggaetón energy and underground electronic music culture. We tour without barriers — no velvet ropes, no bottle service, just a room full of people who came to move. Born in St. Louis, grown nationwide, we bring the rave to your city.';
 
   return (
     <section
@@ -48,7 +48,7 @@ export default function About({ settings }) {
 
               <img
                 src="/Oxido.png"
-                alt="PERREO ELECTRICO"
+                alt="DESENFOCADO"
                 style={{
                   width: 'min(260px, 72vw)',
                   height: 'auto',

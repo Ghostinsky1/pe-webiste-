@@ -51,7 +51,7 @@ export default function CityRequest() {
             Request <span style={{ color: 'var(--red-bright)' }}>Your City</span>
           </h2>
           <p style={{ fontFamily: "'Saira', sans-serif", fontWeight: 300, fontSize: '15px', color: 'var(--text)', marginTop: '16px', lineHeight: 1.6 }}>
-            Tell us where you want PERREO ELECTRICO next. We're listening.
+            Tell us where you want DESENFOCADO next. We're listening.
           </p>
         </motion.div>
 

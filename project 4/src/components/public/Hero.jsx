@@ -148,7 +148,7 @@ export default function Hero({ settings }) {
         >
           <img
             src="/Oxido.png"
-            alt="PERREO ELECTRICO"
+            alt="DESENFOCADO"
             fetchPriority="high"
             style={{
               width: 'min(88vw, 760px)',

@@ -32,7 +32,7 @@ export default function Footer() {
                 marginBottom: '12px',
               }}
             >
-              PERREO ELECTRICO
+              DESENFOCADO
             </div>
             <p style={{ fontFamily: "'Saira', sans-serif", fontWeight: 300, fontSize: '13px', color: 'var(--chrome-dim)', lineHeight: 1.6 }}>
               The reggaetón rave on tour.

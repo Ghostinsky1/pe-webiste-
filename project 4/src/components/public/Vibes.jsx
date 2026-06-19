@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Play } from 'lucide-react';
 
 const videos = [
-  { id: 'P6zy9rHWijE', title: 'PERREO ELECTRICO Live' },
-  { id: 'P6zy9rHWijE', title: 'PERREO ELECTRICO Energy' },
-  { id: 'lNsUsp_uvLo', title: 'PERREO ELECTRICO Crowd' },
+  { id: 'P6zy9rHWijE', title: 'DESENFOCADO Live' },
+  { id: 'P6zy9rHWijE', title: 'DESENFOCADO Energy' },
+  { id: 'lNsUsp_uvLo', title: 'DESENFOCADO Crowd' },
 ];
 
 function getEmbedUrl(videoId) {
