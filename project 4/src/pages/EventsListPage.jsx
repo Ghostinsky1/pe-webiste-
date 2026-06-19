@@ -6,7 +6,7 @@ import { supabase } from '../lib/supabase';
 import MetalBackground from '../components/shared/MetalBackground';
 
 function MarqueeTicker() {
-  const text = "TICKETS ON SALE NOW \u2022 NEW CITIES COMING SOON \u2022 PERREO ELECTRICO TOUR 2026 \u2022 ";
+  const text = "TICKETS ON SALE NOW \u2022 NEW CITIES COMING SOON \u2022 DESENFOCADO TOUR 2026 \u2022 ";
   const repeated = text.repeat(12);
 
   return (
@@ -38,7 +38,7 @@ function EventsNav() {
           <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', flexShrink: 0 }}>
             <img
               src="/Oxido.png"
-              alt="PERREO ELECTRICO"
+              alt="DESENFOCADO"
               style={{
                 height: '46px',
                 width: 'auto',
@@ -272,7 +272,7 @@ export default function EventsListPage() {
             UPCOMING <span style={{ color: 'var(--red-bright)' }}>EVENTS</span>
           </h1>
           <p style={{ fontFamily: "'Saira', sans-serif", fontWeight: 300, fontSize: '16px', color: '#b0b0b0' }}>
-            Find PERREO ELECTRICO in a city near you.
+            Find DESENFOCADO in a city near you.
           </p>
         </div>
 
@@ -315,11 +315,11 @@ export default function EventsListPage() {
               marginBottom: '12px',
             }}
           >
-            PERREO ELECTRICO
+            DESENFOCADO
           </div>
           <hr className="section-divider" style={{ marginBottom: '24px' }} />
           <div style={{ fontFamily: "'Saira', sans-serif", fontWeight: 300, fontSize: '12px', color: 'var(--chrome-dim)', opacity: 0.5 }}>
-            \u00A9 2026 PERREO ELECTRICO. All rights reserved.
+            \u00A9 2026 DESENFOCADO. All rights reserved.
           </div>
         </div>
       </footer>

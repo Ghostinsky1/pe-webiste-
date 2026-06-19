@@ -65,7 +65,7 @@ export default function AdminLogin() {
         <div style={{ textAlign: 'center', marginBottom: '32px' }}>
           <img
             src="/Oxido.png"
-            alt="PERREO ELECTRICO"
+            alt="DESENFOCADO"
             style={{
               height: '48px',
               width: 'auto',

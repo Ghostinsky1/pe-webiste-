@@ -12,7 +12,7 @@ import About from '../components/public/About';
 import Vibes from '../components/public/Vibes';
 
 function MarqueeTicker() {
-  const text = "TICKETS ON SALE NOW \u2022 NEW CITIES COMING SOON \u2022 PERREO ELECTRICO TOUR 2026 \u2022 ";
+  const text = "TICKETS ON SALE NOW \u2022 NEW CITIES COMING SOON \u2022 DESENFOCADO TOUR 2026 \u2022 ";
   const repeated = text.repeat(12);
 
   return (
@@ -44,7 +44,7 @@ function EventNav() {
           <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', flexShrink: 0 }}>
             <img
               src="/Oxido.png"
-              alt="PERREO ELECTRICO"
+              alt="DESENFOCADO"
               style={{
                 height: '46px',
                 width: 'auto',
@@ -264,7 +264,7 @@ export default function EventPage() {
                   <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at center, rgba(204,0,0,0.06) 0%, transparent 70%)' }} />
                   <img
                     src="/Oxido.png"
-                    alt="PERREO ELECTRICO"
+                    alt="DESENFOCADO"
                     style={{ height: '60px', marginBottom: '24px', filter: 'drop-shadow(0 0 20px rgba(204,0,0,0.4))', position: 'relative', zIndex: 1 }}
                   />
                   <span
@@ -630,14 +630,14 @@ export default function EventPage() {
               marginBottom: '12px',
             }}
           >
-            PERREO ELECTRICO
+            DESENFOCADO
           </div>
           <p style={{ fontFamily: "'Saira', sans-serif", fontWeight: 300, fontSize: '13px', color: 'var(--chrome-dim)', marginBottom: '24px' }}>
             The reggaeton rave on tour. Presented by Goza Entertainment.
           </p>
           <hr className="section-divider" style={{ marginBottom: '24px' }} />
           <div style={{ fontFamily: "'Saira', sans-serif", fontWeight: 300, fontSize: '12px', color: 'var(--chrome-dim)', opacity: 0.5 }}>
-            \u00A9 2026 PERREO ELECTRICO. All rights reserved.
+            \u00A9 2026 DESENFOCADO. All rights reserved.
           </div>
         </div>
       </footer>
