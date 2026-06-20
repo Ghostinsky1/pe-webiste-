@@ -81,7 +81,7 @@
     '<button id="pe-close" aria-label="Close">&times;</button>' +
     '<div class="pe-top-bar"></div>' +
     '<div class="pe-badge">⚡ WEEKLY GIVEAWAY &nbsp;—&nbsp; ONE WINNER EVERY SUNDAY ⚡</div>' +
-    '<div class="pe-logo-wrap"><img src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/f1027de7-2038-4cb2-b32d-e3b0cf3875c1/workspace-310419/Oxido.png" alt="Desenfocado" /></div>' +
+    '<div class="pe-logo-wrap"><img src="https://desenfocado.net/Oxido.png" alt="Desenfocado" /></div>' +
     '<div class="pe-line"></div>' +
     '<div class="pe-headline-block">' +
     '<div class="pe-eyebrow">ENTER TO WIN</div>' +
