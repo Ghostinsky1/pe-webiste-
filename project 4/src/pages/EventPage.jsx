@@ -136,6 +136,10 @@ export default function EventPage() {
       .eq('slug', slug)
       .maybeSingle()
       .then(({ data }) => {
+        if (data && data.notes && data.notes.includes('[DROP]')) {
+          window.location.replace('/drop/' + data.slug);
+          return;
+        }
         setShow(data);
         setLoading(false);
       });
