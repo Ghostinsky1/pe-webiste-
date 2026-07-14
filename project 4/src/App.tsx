@@ -6,6 +6,7 @@ const AdminLogin = lazy(() => import('./pages/AdminLogin'));
 const AdminDashboard = lazy(() => import('./pages/AdminDashboard'));
 const EventsListPage = lazy(() => import('./pages/EventsListPage'));
 const EventPage = lazy(() => import('./pages/EventPage'));
+const DropPage = lazy(() => import('./pages/DropPage'));
 
 declare global {
   interface Window {
@@ -34,6 +35,8 @@ export default function App() {
           <Route path="/events/:slug" element={<EventPage />} />
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin/*" element={<AdminDashboard />} />
+          <Route path="/drop/:key" element={<DropPage />} />
+          <Route path="/:key" element={<DropPage />} />
         </Routes>
       </Suspense>
     </BrowserRouter>
