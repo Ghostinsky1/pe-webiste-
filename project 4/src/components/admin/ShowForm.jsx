@@ -329,6 +329,25 @@ export default function ShowForm({ show, onClose, onSaved }) {
             <textarea value={form.description} onChange={e => set('description', e.target.value)} placeholder="About this event..." rows={4} style={{ ...inputStyle, resize: 'vertical' }} />
           </div>
 
+          {/* Drop Mode Section */}
+          <div style={{ borderTop: '1px solid rgba(192,192,192,0.1)', paddingTop: '16px', marginTop: '8px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+              <div style={{ ...labelStyle, color: 'var(--red)', fontSize: '11px', marginBottom: 0 }}>Drop Mode — event page becomes phone-capture landing</div>
+              <button
+                type="button"
+                onClick={() => set('notes', (form.notes || '').includes('[DROP]') ? form.notes.replace('[DROP]', '').trim() : ('[DROP] ' + (form.notes || '')).trim())}
+                style={{
+                  background: 'none', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px',
+                  color: (form.notes || '').includes('[DROP]') ? 'var(--red-bright)' : 'var(--chrome-dim)',
+                  fontFamily: "'Saira Condensed', sans-serif", fontWeight: 900, fontSize: '11px', letterSpacing: '3px', textTransform: 'uppercase',
+                }}
+              >
+                {(form.notes || '').includes('[DROP]') ? <ToggleRight size={26} /> : <ToggleLeft size={26} />}
+                {(form.notes || '').includes('[DROP]') ? 'ON' : 'OFF'}
+              </button>
+            </div>
+          </div>
+
           {/* Promo Banner Section */}
           <div style={{ borderTop: '1px solid rgba(192,192,192,0.1)', paddingTop: '16px', marginTop: '8px' }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '12px' }}>
