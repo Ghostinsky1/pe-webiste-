@@ -91,11 +91,11 @@ export default function DropPage() {
       }} />
       <div style={{ position: 'relative', zIndex: 2, width: '100%', maxWidth: 430, padding: '44px 24px 56px', textAlign: 'center' }}>
         <div style={{ ...mono, fontSize: 11, letterSpacing: '0.35em', color: '#6b5a5a', marginBottom: 26 }}>You found it</div>
-        <img src="/Oxido.png" alt="Perreo Electrico" style={{ width: '100%', maxWidth: 250, margin: '0 auto 18px', display: 'block', filter: 'drop-shadow(0 0 14px rgba(220,30,80,0.5)) drop-shadow(0 0 30px rgba(180,100,0,0.25))' }} />
+        <img src="/Oxido.png" alt="Desenfocado" style={{ width: '100%', maxWidth: 250, margin: '0 auto 18px', display: 'block', filter: 'drop-shadow(0 0 14px rgba(220,30,80,0.5)) drop-shadow(0 0 30px rgba(180,100,0,0.25))' }} />
         <h1 style={{ ...bebas, fontSize: 'clamp(2.6rem, 11vw, 3.6rem)', lineHeight: 0.95, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: 12, background: 'linear-gradient(135deg,#fff 30%,#e8a020 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
           Underground<br />Latin Rave<br /><span style={{ WebkitTextFillColor: '#dc1e50' }}>· {cityShort} ·</span>
         </h1>
-        <p style={{ fontSize: 15, color: '#c9b8b8', opacity: 0.9, marginBottom: 6 }}>Perreo Eléctrico — {cityLabel}</p>
+        <p style={{ fontSize: 15, color: '#c9b8b8', opacity: 0.9, marginBottom: 6 }}>Desenfocado — {cityLabel}</p>
         <p style={{ ...mono, fontSize: 12, letterSpacing: '0.2em', color: '#6b5a5a', marginBottom: 34 }}>{dateStr} · VENUE REVEALED BY TEXT</p>
 
         {!sent ? (
@@ -121,7 +121,7 @@ export default function DropPage() {
                 {busy ? 'SENDING…' : 'SEND ME THE ADDRESS →'}
               </button>
               <p style={{ fontSize: 10.5, color: '#5a4646', lineHeight: 1.5, marginTop: 12, textAlign: 'center' }}>
-                By submitting you agree to receive texts from Perreo Eléctrico. Msg &amp; data rates may apply. Reply STOP to opt out.
+                By submitting you agree to receive texts from Desenfocado. Msg &amp; data rates may apply. Reply STOP to opt out.
               </p>
             </form>
           </div>
@@ -144,7 +144,7 @@ export default function DropPage() {
         )}
 
         <div style={{ ...mono, marginTop: 34, fontSize: 10, letterSpacing: '0.3em', color: '#3d2f2f' }}>
-          Goza Entertainment · Perreo Eléctrico
+          Goza Entertainment · Desenfocado
         </div>
       </div>
     </div>
